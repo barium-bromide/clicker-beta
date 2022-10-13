@@ -49,3 +49,6 @@
     background-color: rgb(255, 186, 59);
     font-size: 15px;
 }
+.Buy:hover {
+    color: grey;
+}

@@ -1,6 +1,6 @@
-let count = 0;
+let apple = 0;
 
 document.getElementById("IncreaseApple").onclick = function(){
-    count +=1;
-    document.getElementById("countLabel").innerHTML = count;
+    apple +=1;
+    document.getElementById("countLabel").innerHTML = apple;
 }
