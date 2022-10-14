@@ -1,18 +1,35 @@
 #body{
     background-color: rgb(52, 161, 235);
+    margin: 0px;
 }
 #TitleAppleClicker{
+        background-color: rgb(24, 196, 24);
         text-align: center;
         font-size: 50px;
 }
-#countLabel{
-    position: absolute;
-    margin-left : 200px;
-    margin-top : -100px;
+#divcount{
+    position: relative;
+    margin-top : -700px;
     font-size: 50px;
+    margin: 0 auto;
+    height: 50px;
+    width: fit-content;
 }
+
+#Clicker{
+    background-color: white;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    margin-top: auto;
+}
+
+#countPara{
+    text-align: center;
+}
+
 #Shop{
-    position:relative;
+    position:absolute;
     margin-left : 1000px;
     margin-top : 0px;
     font-size: 50px;
@@ -25,16 +42,17 @@
     border-radius: 10px;
     background-color: rgb(99, 235, 129);
     height: 400px;
-    width: 345px;
+    width: fit-content;
     border: 5px solid black;
     position:relative;
-    margin-left: 1000px;
-    margin-top: -400px;
+    margin-left: auto;
+    margin-top: -370px;
+    display: block;
     overflow-y: scroll;
 }
 .slot{
     border-style: groove;
-    background-color: rgb(200, 216, 201);
+    background-color: rgb(169, 184, 170);
     height: 100px;
     width: 300px;
     border: 5px solid rgb(175, 103, 103);
@@ -43,12 +61,21 @@
 }
 .Buy{
     position: absolute;
-    left: 250px;
+    left: 230px;
     top: 60px;
     color: black;
-    background-color: rgb(255, 186, 59);
-    font-size: 15px;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 30px;
+    font-weight: bold;
 }
 .Buy:hover {
-    color: grey;
+    color: white;
+}
+.inv{
+    position: absolute;
+    left: 255px;
+    top : -55px;
+    color: black;
+    font-size: 50px;
 }
