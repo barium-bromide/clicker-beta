@@ -6,9 +6,15 @@ document.getElementById("IncreaseApple").onclick = function IncreaseApple(){
 }
 
 Price = [15, 100, 1000, 2000, 5000, 10000, 30000, 50000, 100000, 200000]
+Inventory = []
+function Invcount(){
+    for(i = 0;i<10; i++){
+        Inventory.push(0)
+    }
+}
 
 document.getElementById("buy0").onclick = function(){
-    if (apple < 15){
+    if (apple < Price[0]){
         return
     }
     else{
@@ -18,7 +24,7 @@ document.getElementById("buy0").onclick = function(){
     }
 
     document.getElementById("buy1").onclick = function(){
-        if (apple < 100){
+        if (apple < Price[1]){
             return
         }
         else{
@@ -28,7 +34,7 @@ document.getElementById("buy0").onclick = function(){
         }
 
     document.getElementById("buy2").onclick = function(){
-        if (apple < 1000){
+        if (apple < Price[2]){
             return
         }
         else{
@@ -37,7 +43,7 @@ document.getElementById("buy0").onclick = function(){
             }
         }
     document.getElementById("buy3").onclick = function(){
-        if (apple < 2000){
+        if (apple < Price[3]){
             return
         }
         else{
@@ -46,7 +52,7 @@ document.getElementById("buy0").onclick = function(){
             }
         }
     document.getElementById("buy4").onclick = function(){
-        if (apple < 5000){
+        if (apple < Price[4]){
             return
         }
         else{
@@ -55,7 +61,7 @@ document.getElementById("buy0").onclick = function(){
             }
         }    
     document.getElementById("buy5").onclick = function(){
-        if (apple < 10000){
+        if (apple < Price[5]){
             return
         }
         else{
@@ -64,7 +70,7 @@ document.getElementById("buy0").onclick = function(){
             }
         }
     document.getElementById("buy6").onclick = function(){
-        if (apple < 30000){
+        if (apple < Price[6]){
             return
         }
         else{
@@ -73,7 +79,7 @@ document.getElementById("buy0").onclick = function(){
             }
         }
     document.getElementById("buy7").onclick = function(){
-        if (apple < 50000){
+        if (apple < Price[7]){
             return
         }
         else{
@@ -82,7 +88,7 @@ document.getElementById("buy0").onclick = function(){
             }
         }
     document.getElementById("buy8").onclick = function(){
-        if (apple < 100000){
+        if (apple < Price[8]){
             return
         }
         else{
@@ -91,7 +97,7 @@ document.getElementById("buy0").onclick = function(){
             }
         }
     document.getElementById("buy9").onclick = function(){
-        if (apple < 200000){
+        if (apple < Price[9]){
             return
         }
         else{

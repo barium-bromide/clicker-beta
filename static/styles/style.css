@@ -1,11 +1,16 @@
-#body{
-    background-color: rgb(52, 161, 235);
+*{
     margin: 0px;
 }
+
+#body{
+    background-color: rgb(52, 161, 235);
+}
+
 #TitleAppleClicker{
-        background-color: rgb(24, 196, 24);
-        text-align: center;
-        font-size: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(24, 196, 24);
+    font-size: 50px;
 }
 #divcount{
     position: relative;
@@ -17,11 +22,12 @@
 }
 
 #Clicker{
-    background-color: white;
+    background-color: greenyellow;
     height: fit-content;
     width: fit-content;
     position: relative;
     margin-top: auto;
+    height: 90vh;
 }
 
 #countPara{
@@ -30,7 +36,7 @@
 
 #Shop{
     position:absolute;
-    margin-left : 1000px;
+    margin-left: 1030px;
     margin-top : 0px;
     font-size: 50px;
 }
@@ -46,7 +52,7 @@
     border: 5px solid black;
     position:relative;
     margin-left: auto;
-    margin-top: -370px;
+    margin-top: -520px;
     display: block;
     overflow-y: scroll;
 }
@@ -73,9 +79,12 @@
     color: white;
 }
 .inv{
+    display: flex;
+    width: 100px;
+    justify-content: right;
     position: absolute;
-    left: 255px;
-    top : -55px;
+    left: 200px;
+    top: 0;
     color: black;
     font-size: 50px;
 }
