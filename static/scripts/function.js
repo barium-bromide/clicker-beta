@@ -1,24 +1,24 @@
-let apple = 0;
+//All comments send to database
+//apple = 0
+//claim_apple = 0
 
 document.getElementById("IncreaseApple").onclick = function IncreaseApple(){
-    apple +=1;
+    //apple += 1
     document.getElementById("countPara").innerHTML = apple;
 }
 
-Price = [15, 100, 1000, 2000, 5000, 10000, 30000, 50000, 100000, 200000]
-Inventory = []
-function Invcount(){
-    for(i = 0;i<10; i++){
-        Inventory.push(0)
-    }
-}
-
+//Price = [15, 100, 1000, 2000, 5000, 10000, 30000, 50000, 100000, 200000] => Price get expensive if buy more *1.10 everytime
+//Player_Inventory = [] => after player buy stuff from shop they got
 document.getElementById("buy0").onclick = function(){
     if (apple < Price[0]){
         return
     }
     else{
-            apple -=Price[0];
+            //I lazy type all 10 but this same with 10 if
+            //apple -=Price[0];
+            //Player_Inventory = [Got smtg]
+            //Price[*1.10]
+            //Change claim_apple by 1, Player must claim or gone(autoclick feature shop)=> I will add the btn and claim label if i free
             document.getElementById("countPara").innerHTML = apple;
         }
     }
@@ -28,7 +28,7 @@ document.getElementById("buy0").onclick = function(){
             return
         }
         else{
-                apple -=Price[1];
+                //apple -=Price[1];
                 document.getElementById("countPara").innerHTML = apple;
             }
         }
@@ -38,7 +38,7 @@ document.getElementById("buy0").onclick = function(){
             return
         }
         else{
-                apple -=Price[2];
+                //apple -=Price[2];
                 document.getElementById("countPara").innerHTML = apple;
             }
         }
@@ -47,7 +47,7 @@ document.getElementById("buy0").onclick = function(){
             return
         }
         else{
-                apple -=Price[3];
+                //apple -=Price[3];
                 document.getElementById("countPara").innerHTML = apple;
             }
         }
@@ -56,7 +56,7 @@ document.getElementById("buy0").onclick = function(){
             return
         }
         else{
-                apple -=Price[4];
+                //apple -=Price[4];
                 document.getElementById("countPara").innerHTML = apple;
             }
         }    
@@ -65,7 +65,7 @@ document.getElementById("buy0").onclick = function(){
             return
         }
         else{
-                apple -=Price[5];
+                //apple -=Price[5];
                 document.getElementById("countPara").innerHTML = apple;
             }
         }
@@ -74,7 +74,7 @@ document.getElementById("buy0").onclick = function(){
             return
         }
         else{
-                apple -=Price[6];
+                //apple -=Price[6];
                 document.getElementById("countPara").innerHTML = apple;
             }
         }
@@ -83,7 +83,7 @@ document.getElementById("buy0").onclick = function(){
             return
         }
         else{
-                apple -=Price[7];
+                //apple -=Price[7];
                 document.getElementById("countPara").innerHTML = apple;
             }
         }
@@ -92,7 +92,7 @@ document.getElementById("buy0").onclick = function(){
             return
         }
         else{
-                apple -=Price[8];
+                //apple -=Price[8];
                 document.getElementById("countPara").innerHTML = apple;
             }
         }
@@ -101,7 +101,7 @@ document.getElementById("buy0").onclick = function(){
             return
         }
         else{
-                apple -=Price[9];
+                //apple -=Price[9];
                 document.getElementById("countPara").innerHTML = apple;
             }
         }
