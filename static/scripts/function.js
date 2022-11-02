@@ -3,7 +3,8 @@
 //claim_apple = 0
 
 document.getElementById("IncreaseApple").onclick = function IncreaseApple(){
-    //apple += 1
+    //apple += 1    
+    document.getElementById("IncreaseApple").style.transform = scale(1.5);  
     document.getElementById("countPara").innerHTML = apple;
 }
 

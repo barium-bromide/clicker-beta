@@ -22,7 +22,6 @@
 }
 
 #Clicker{
-    background-color: greenyellow;
     height: fit-content;
     width: fit-content;
     position: relative;
@@ -43,7 +42,14 @@
 #IncreaseApple{
     background-color: transparent;
     border-color: transparent;
+    transform: scale(1);
 }   
+
+#IncreaseApple:hover{
+    transform: scale(1.2);
+
+}
+
 #main{
     border-radius: 10px;
     background-color: rgb(99, 235, 129);
@@ -87,4 +93,30 @@
     top: 0;
     color: black;
     font-size: 50px;
+}
+
+.claim{ 
+    position: relative;
+    margin-top: -100px;
+    justify-content: center;
+    width: fit-content;
+    background-color: greenyellow;
+}
+
+.claim label{
+    font-size: 50px;
+}
+
+.btnclaim{
+    margin-top: 20px;
+    border: none;
+    box-shadow: none;
+    padding: 10px 25px;
+    background: rgb(92, 201, 92);
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.btnclaim:hover{
+    color: white;
 }
