@@ -6,12 +6,22 @@
     background-color: rgb(52, 161, 235);
 }
 
-#TitleAppleClicker{
+.TitleAppleClicker{
     display: flex;
-    justify-content: center;
     background-color: rgb(24, 196, 24);
-    font-size: 50px;
+    font-size: 40px;
 }
+
+.leaderboard{
+    margin-left: auto;
+    text-decoration: none;
+    color: black;
+}
+
+.leaderboard:hover{
+    color: white;
+}
+
 #divcount{
     position: relative;
     margin-top : -700px;
@@ -95,19 +105,22 @@
     font-size: 50px;
 }
 
-.claim{ 
+.claim{
     position: relative;
     margin-top: -100px;
     justify-content: center;
     width: fit-content;
-    background-color: greenyellow;
+    margin-left: 50%;
+
 }
 
 .claim label{
     font-size: 50px;
+    text-align: center;
 }
 
 .btnclaim{
+    position: relative;
     margin-top: 20px;
     border: none;
     box-shadow: none;
@@ -115,6 +128,7 @@
     background: rgb(92, 201, 92);
     font-size: 20px;
     border-radius: 10px;
+    margin-left: calc(50%);
 }
 
 .btnclaim:hover{
