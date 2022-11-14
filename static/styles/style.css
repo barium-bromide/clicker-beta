@@ -1,5 +1,8 @@
 *{
     margin: 0px;
+    padding: 0px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 #body{
