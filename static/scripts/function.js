@@ -6,7 +6,7 @@ document.getElementById("IncreaseApple").onclick = function IncreaseApple() {
   if ((now - lastclick)/100 < 0.05){
     alert("You are clicking too fast");
     return;
-  }
+    }
   let lastclick = document.getElementById("IncreaseApple").onclick;
   //apple += 1
   document.getElementById("IncreaseApple").style.transform = scale(1.5);
