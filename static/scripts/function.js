@@ -1,14 +1,14 @@
 //All comments send to database
 //apple = 0
 //claim_apple = 0
-lastClick = Date.now();
+let lastClick = Date.now();
 document.getElementById("IncreaseApple").onclick = function IncreaseApple() {
     let now = Date.now();
     if ((now - lastClick) / 100 < 0.05) {
         alert("You are clicking too fast");
         return;
     }
-    let lastClick = Date.now();
+    lastClick = Date.now();
     //apple += 1
     document.getElementById("IncreaseApple").style.transform = scale(1.5);
     document.getElementById("countPara").innerHTML = apple;
