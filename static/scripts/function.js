@@ -10,7 +10,7 @@ document.getElementById("IncreaseApple").onclick = function IncreaseApple() {
     }
     lastClick = Date.now();
     //apple += 1
-    document.getElementById("IncreaseApple").style.transform = scale(1.5);
+    document.getElementById("IncreaseApple").style.transform = "scale(1.3)";
     document.getElementById("countPara").innerHTML = apple;
 };
 
