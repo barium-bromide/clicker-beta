@@ -14,11 +14,13 @@ appleButton.onclick = function IncreaseApple() {
     lastClick = Date.now();
     //apple += 1
 
+
     appleButton.classList.add("large");
 
     setTimeout(() => {
         appleButton.classList.remove("large");
     }, 500);
+
 
     document.getElementById("countPara").innerHTML = apple;
     console.log("Clicked");
