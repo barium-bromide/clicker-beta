@@ -2,7 +2,10 @@
 //apple = 0
 //claim_apple = 0
 let lastClick = Date.now();
-document.getElementById("IncreaseApple").onclick = function IncreaseApple() {
+
+let appleButton = document.getElementById("IncreaseApple");
+
+appleButton.onclick = function IncreaseApple() {
     let now = Date.now();
     if ((now - lastClick) / 100 < 0.05) {
         alert("You are clicking too fast");
@@ -10,8 +13,15 @@ document.getElementById("IncreaseApple").onclick = function IncreaseApple() {
     }
     lastClick = Date.now();
     //apple += 1
-    document.getElementById("IncreaseApple").style.transform = scale(1.5);
+
+    appleButton.classList.add("large");
+
+    setTimeout(() => {
+        appleButton.classList.remove("large");
+    }, 500);
+
     document.getElementById("countPara").innerHTML = apple;
+    console.log("Clicked");
 };
 
 //Price = [15, 100, 1000, 2000, 5000, 10000, 30000, 50000, 100000, 200000] => Price get expensive if buy more *1.10 everytime
