@@ -30,3 +30,14 @@ for (let i = 0; i < 10; i++) {
         }
     };
 }
+
+//workers = increase mouse power by one(click one time + mouse power)
+//farm = increase claim before leaving by one
+//factory = increase claim before leaving by 1%
+//store = increase claim before leaving by 2%
+//trucks = increase mouse power by 5%
+//ship =  increase claim before leaving by 5%
+//aeroplane = increase claim before leaving by 10%
+//trade centre = increase mouse power by 10%
+//computer = increase claim before leaving by 15%
+//rocket ship = increase claim before leaving by 20%
