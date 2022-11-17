@@ -1,30 +1,30 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     outline: none;
     font-family: 'Poppins', sans-serif;
 }
 
-#body{
-    background : rgb(52, 161, 235);
+#body {
+    background: rgb(52, 161, 235);
     display: flex;
     justify-content: center;
     height: 100vh;
 }
 
-.loginpage{
+.loginpage {
     position: relative;
     width: 500px;
     padding: 40px;
-    background-color:rgb(245, 208, 0)
+    background-color: rgb(245, 208, 0)
 }
 
-.loginpage h2{
+.loginpage h2 {
     color: black;
     margin-bottom: 45px;
 }
 
-#loginbox{
+#loginbox {
     font-size: 30px;
     border: 5px solid black;
     border-radius: 10px;
@@ -32,13 +32,13 @@
     margin: auto;
 }
 
-.inputbox{
+.inputbox {
     position: relative;
     height: 40px;
     width: 100%;
 }
 
-.inputbox input{
+.inputbox input {
     position: absolute;
     background: transparent;
     border: none;
@@ -48,7 +48,7 @@
     width: 100%;
 }
 
-.inputbox label{
+.inputbox label {
     position: relative;
     top: 0;
     left: 0;
@@ -58,14 +58,15 @@
     transition: 0.5s;
 }
 
-.inputbox input:focus + label, .inputbox input:valid + label{
+.inputbox input:focus+label,
+.inputbox input:valid+label {
     transform: translateY(-35px);
     font-size: 25px;
     color: #fff;
     padding: 2px 6px;
 }
 
-.inputbox span{
+.inputbox span {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -75,7 +76,7 @@
     height: 2px;
 }
 
-.inputbox span:before{
+.inputbox span:before {
     content: '';
     position: absolute;
     top: 0;
@@ -88,13 +89,14 @@
     transition: transform 0.5s ease-in-out;
 }
 
-.inputbox input:focus ~ span:before, .inputbox input:valid ~ span:before{
+.inputbox input:focus~span:before,
+.inputbox input:valid~span:before {
     transform: scaleX(1);
     transform-origin: left;
     transition: transform 0.5s ease-in-out;
 }
 
-.btn{
+.btn {
     margin-top: 20px;
     border: none;
     box-shadow: none;
@@ -104,6 +106,6 @@
     border-radius: 20px;
 }
 
-.btn:hover{
+.btn:hover {
     background: #a0a0a0;
 }
