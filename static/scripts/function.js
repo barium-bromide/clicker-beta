@@ -19,7 +19,7 @@ appleButton.onclick = function IncreaseApple() {
 
     setTimeout(() => {
         appleButton.classList.remove("large");
-    }, 500);
+    }, 100);
 
 
     document.getElementById("countPara").innerHTML = apple;
