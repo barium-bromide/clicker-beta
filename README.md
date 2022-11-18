@@ -6,6 +6,4 @@ Btw to host this website u need to do a few steps:
 
 2. Connect your github account
 
-3. Follow deez steps:
-
-<iframe src="https://scribehow.com/embed/Render_Workflow__qEo668IoT-eWL3SFAs3H9g" width="640" height="640" allowfullscreen frameborder="0"></iframe>
+3. Follow [deez steps](https://scribehow.com/shared/Render_Workflow__qEo668IoT-eWL3SFAs3H9g)
