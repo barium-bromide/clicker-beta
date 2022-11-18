@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple clicker(alpha)</title>
     <link rel="stylesheet" href="../static/styles/style.css">
+
+    <script src="../static/scripts/function.js" defer></script>
 </head>
 <body id="body">
-    <div class="TitleAppleClicker"><p>Username: </p><a href="leaderboard.html" class="leaderboard">Leaderboard</a></div>
+    <div class="TitleAppleClicker">
+        <p>Username: </p><a href="/leaderboard" class="leaderboard">Leaderboard</a>
+    </div>
     <h3 id="Shop">Shop</h3>
     <div id="Clicker">
-        <div id="divcount"><p id="countPara">0</p></div>
-        <button id="IncreaseApple"><img src="../Picture,Video,Sounds/Apple.png"></button>
+        <div id="divcount">
+            <p id="countPara">0</p>
+        </div>
+        <button id="IncreaseApple"><img src="../static/assets/Apple.png"></button>
     </div>
     <div class="shop" id="main">
         <div class="slot" id="slot0">Workers
@@ -66,12 +72,12 @@
             <p class="inv" id="inv9">0</p>
         </div>
     </div>
-        <div class="claim">
-            <label>0</label>
-        </div>
-        <div>
-            <button class="btnclaim"><b>Claim before leaving</b></button>
-        </div>
-    <script src="../static/scripts/function.js"></script>
+    <div class="claim">
+        <label>0</label>
+    </div>
+    <div>
+        <button class="btnclaim"><b>Claim before leaving</b></button>
+    </div>
+
 </body>
 </html>
