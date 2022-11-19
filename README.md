@@ -7,3 +7,7 @@ Btw to host this website u need to do a few steps:
 2. Connect your github account
 
 3. Follow [deez steps](https://scribehow.com/shared/Render_Workflow__qEo668IoT-eWL3SFAs3H9g)
+
+# To run the code:
+
+`python app.py`
