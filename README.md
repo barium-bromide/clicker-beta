@@ -11,3 +11,5 @@ Btw to host this website u need to do a few steps:
 # To run the code:
 
 `python app.py`
+
+You can view `/home` in http://127.0.0.1:5000/home
