@@ -1,19 +1,39 @@
-//All comments send to database
-//apple = 0
-//claim_apple = 0
+const shop = {
+    workers: 15,
+    farm: 100,
+    factory: 1000,
+    store: 2000,
+    trucks: 5000,
+    ship: 10000,
+    aeroplane: 30000,
+    tradeCenter: 50000,
+    computer: 100000,
+    rocketShip: 200000,
+};
+
+let apple = 0;
+let claim_apple = 0;
 let lastClick = Date.now();
-
 let appleButton = document.getElementById("IncreaseApple");
+let username = localStorage.getItem("username");
 
-appleButton.onclick = function IncreaseApple() {
+if (!username) {
+    // TODO: handle unlogined users
+}
+
+document.getElementById("username").innerText = `Username: ${username}`;
+
+appleButton.onclick = () => {
     let now = Date.now();
+
     if ((now - lastClick) / 100 < 0.05) {
         alert("You are clicking too fast");
         return;
     }
-    lastClick = Date.now();
-    //apple += 1
 
+    lastClick = Date.now();
+    apple++;
+    claim_apple++;
 
     appleButton.classList.add("large");
 
@@ -21,27 +41,22 @@ appleButton.onclick = function IncreaseApple() {
         appleButton.classList.remove("large");
     }, 100);
 
-
     document.getElementById("countPara").innerHTML = apple;
-    console.log("Clicked");
+    console.count("Clicked");
 };
 
-//Price = [15, 100, 1000, 2000, 5000, 10000, 30000, 50000, 100000, 200000] => Price get expensive if buy more *1.10 everytime
-//Player_Inventory = [] => after player buy stuff from shop they got
-for (let i = 0; i < 10; i++) {
-    document.getElementById("buy" + i).onclick = function () {
-        if (apple < Price[i]) {
-            return;
-        } else {
-            //apple -=Price[i];
-            //Player_Inventory = [Got smtg]
-            //Price[*1.10]
-            //Change claim_apple by 1, Player must claim or gone, get elemet btn claim to autoclick thingy
-            //document.getElementById("countPara").innerHTML = apple;
-            console.log("bought item" + i);
-        }
-    };
+let inventory = {};
+
+function buy(name) {
+    socket.emit("buy", name);
 }
+
+setInterval(() => {
+    socket.emit("add", username, claim_apple);
+    claim_apple = 0;
+
+    console.time("Claimed");
+}, 10_000);
 
 //workers = increase mouse power by one(click one time + mouse power)
 //farm = increase claim before leaving by one
