@@ -77,7 +77,8 @@ def buy(user, item):
         add_apple(user, -price)
         add_item(user, item, 1)
 
-        user_data = find(username=user)
+        user_data["apple"] -= price
+        user_data["inventory"][item] += 1
 
         emit("apple", user_data["apple"])
         emit("item", (item, user_data["inventory"][item]))

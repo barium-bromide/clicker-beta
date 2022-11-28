@@ -15,6 +15,11 @@ socket.on("inv", inv => {
     }
 });
 
+socket.on("item", (name, amount) => {
+    console.log(name, amount);
+    inventory[name] = amount;
+});
+
 socket.on("shop", shop => {
     let main = document.getElementById("main");
 
@@ -56,9 +61,4 @@ socket.on("shop", shop => {
 
         main.appendChild(container);
     }
-});
-
-socket.on("item", (name, amount) => {
-    console.log(name, amount);
-    inventory[name] = amount;
 });
