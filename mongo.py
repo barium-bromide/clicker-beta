@@ -23,11 +23,11 @@ SHOP = {
     "rocketShip": 200000
 }
  
-def find(username):
-    return datas.find_one({ "username": username })
+def find(**filter):
+    return datas.find_one(filter)
 
 def create_user(username, password):
-    if find(username):
+    if find(username=username):
         return False
     
     datas.insert_one({

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +7,20 @@
     <title>Apple Clicker | Sign Up</title>
     <link rel="stylesheet" href="/static/styles/login.css">
 </head>
-
 <body id="body">
     <div class="loginpage" id="loginbox">
         <h2>Apple Clicker</h2>
-        <form>
+        <form action="/signup_validator" method="post">
+            <!--change-->
             <div class="inputbox">
-                <input type="text" maxlength="15" required>
+                <input type="text" maxlength="15" name="username" required>
                 <label>Enter your username</label>
                 <span></span>
             </div>
             <br>
             <br>
             <div class="inputbox">
-                <input type="password" maxlength="20" required>
+                <input type="password" maxlength="20" name="password" required>
                 <label>Enter your password</label>
                 <span></span>
             </div>
@@ -39,5 +38,4 @@
         <p class="loginpage">Already have an account? <a href="/login">Log in</a></p>
     </div>
 </body>
-
 </html>

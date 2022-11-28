@@ -1,21 +1,12 @@
-const shop = {
-    workers: 15,
-    farm: 100,
-    factory: 1000,
-    store: 2000,
-    trucks: 5000,
-    ship: 10000,
-    aeroplane: 30000,
-    tradeCenter: 50000,
-    computer: 100000,
-    rocketShip: 200000,
-};
-
 let apple = 0;
 let claim_apple = 0;
 let lastClick = Date.now();
 let appleButton = document.getElementById("IncreaseApple");
-let username = localStorage.getItem("username");
+let username =
+    document.getElementById("real-username").innerText ||
+    localStorage.getItem("username");
+
+localStorage.setItem("username", username);
 
 if (!username) {
     // TODO: handle unlogined users
@@ -55,7 +46,7 @@ setInterval(() => {
     socket.emit("add", username, claim_apple);
     claim_apple = 0;
 
-    console.time("Claimed");
+    console.count("Claimed");
 }, 10_000);
 
 //workers = increase mouse power by one(click one time + mouse power)
