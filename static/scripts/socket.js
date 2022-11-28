@@ -16,7 +16,7 @@ socket.on("inv", inv => {
 });
 
 socket.on("item", (name, amount) => {
-    console.log(name, amount);
+    console.timeEnd(name);
     inventory[name] = amount;
 });
 
@@ -41,7 +41,7 @@ socket.on("shop", shop => {
         buyBtn.innerText = "Buy";
         buyBtn.onclick = () => {
             socket.emit("buy", username, itemName);
-            console.log(`Bought ${itemName}`);
+            console.time(itemName);
         };
 
         let priceElement = document.createElement("p");
