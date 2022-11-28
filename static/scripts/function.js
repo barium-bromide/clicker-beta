@@ -2,9 +2,10 @@ let apple = 0;
 let claim_apple = 0;
 let lastClick = Date.now();
 let appleButton = document.getElementById("IncreaseApple");
-let username =
+const username =
     document.getElementById("real-username").innerText ||
     localStorage.getItem("username");
+const inventory = {};
 
 localStorage.setItem("username", username);
 
@@ -35,12 +36,6 @@ appleButton.onclick = () => {
     document.getElementById("countPara").innerHTML = apple;
     console.count("Clicked");
 };
-
-let inventory = {};
-
-function buy(name) {
-    socket.emit("buy", name);
-}
 
 setInterval(() => {
     socket.emit("add", username, claim_apple);

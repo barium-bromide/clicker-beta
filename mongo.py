@@ -40,10 +40,15 @@ def create_user(username, password):
     return True
 
 def add_apple(username, amount):
-    # TODO: check apple amount
-
     datas.update_one({ "username": username }, {
         "$inc": {
             "apple": amount
+        }
+    })
+
+def add_item(username, item, amount):
+    datas.update_one({ "username": username }, {
+        "$inc": {
+            f"inventory.{item}": amount
         }
     })

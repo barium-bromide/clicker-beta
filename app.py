@@ -56,6 +56,7 @@ def signup_validator():
 
 @socket.on("add")
 def add(user, amount):
+    # TODO: check apple amount
     add_apple(user, amount)
 
 @socket.on("init")
@@ -66,8 +67,27 @@ def init(user):
     emit("shop", SHOP)
 
 @socket.on("buy")
-def buy(item):
-    price = SHOP["item"]
+def buy(user, item):
+    print(user, item)
+    user_data = find(username=user)
+    price = SHOP[item] * 1.1 ** user_data["inventory"][item]
+    apple = user_data["apple"]
+
+    if apple >= price:
+        add_apple(user, -price)
+        add_item(user, item, 1)
+
+        user_data = find(username=user)
+
+        emit("apple", user_data["apple"])
+        emit("item", (item, user_data["inventory"][item]))
+        emit("shop", SHOP)
+
+    else:
+        # TODO: handle not enough apple
+        pass
+        
+
 
 
 if __name__ == "__main__":

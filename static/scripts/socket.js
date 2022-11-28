@@ -10,13 +10,17 @@ socket.on("apple", epal => {
 });
 
 socket.on("inv", inv => {
-    inventory = inv;
+    for (let [item, price] of Object.entries(inv)) {
+        inventory[item] = price;
+    }
 });
 
 socket.on("shop", shop => {
     let main = document.getElementById("main");
 
-    while (main.firstChild) main.remove(main.lastChild);
+    while (main.firstChild) {
+        main.removeChild(main.lastChild);
+    }
 
     for (let [i, [itemName, price]] of Object.entries(shop).entries()) {
         let container = document.createElement("div");
@@ -30,7 +34,9 @@ socket.on("shop", shop => {
         let buyBtn = document.createElement("button");
         buyBtn.className = "Buy";
         buyBtn.innerText = "Buy";
-        buyBtn.onclick = `buy(${itemName})`;
+        buyBtn.onclick = () => {
+            socket.emit("buy", username, itemName);
+        };
 
         let priceElement = document.createElement("p");
         priceElement.className = "price";
@@ -49,4 +55,9 @@ socket.on("shop", shop => {
 
         main.appendChild(container);
     }
+});
+
+socket.on("item", (name, amount) => {
+    console.log(name, amount);
+    inventory[name] = amount;
 });
