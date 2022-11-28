@@ -34,14 +34,14 @@ appleButton.onclick = () => {
     }, 100);
 
     document.getElementById("countPara").innerHTML = apple;
-    console.count("Clicked");
+    console.count("click");
 };
 
 setInterval(() => {
     socket.emit("add", username, claim_apple);
-    claim_apple = 0;
+    console.log(`Claimed ${claim_apple} apple(s)`);
 
-    console.count("Claimed");
+    claim_apple = 0;
 }, 10_000);
 
 //workers = increase mouse power by one(click one time + mouse power)

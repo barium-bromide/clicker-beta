@@ -36,6 +36,7 @@ socket.on("shop", shop => {
         buyBtn.innerText = "Buy";
         buyBtn.onclick = () => {
             socket.emit("buy", username, itemName);
+            console.log(`Bought ${itemName}`);
         };
 
         let priceElement = document.createElement("p");
