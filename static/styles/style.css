@@ -18,11 +18,36 @@ body {
 .leaderboard {
     margin-left: auto;
     text-decoration: none;
-    color: black;
 }
 
 .leaderboard:hover {
-    transform:scale(1,1.2);
+    filter: brightness(1.75);
+}
+
+#setting-menu {
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    margin-left: 13%;
+    margin-top: -2.5%;
+    background-color: rgb(194, 80, 80);
+    border: brown solid 3px;
+    border-radius: 10px;
+    margin-bottom: 50%;
+}
+
+#settings {
+    text-decoration: none;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 35px;
+}
+
+#settings:hover {
+    filter: brightness(1.75);
 }
 
 #divcount {

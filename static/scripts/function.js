@@ -11,11 +11,23 @@ localStorage.setItem("username", username);
 
 document.getElementById("username").innerText = `Username: ${username}`;
 
+document.querySelector("#settings").onclick = () => {
+    let temp = 0
+    temp++
+    const settingMenu = document.querySelector("#setting-menu");
+    console.log(settingMenu.style);
+    if temp % 2 === 1:
+        settingMenu.style.opacity = "1"
+        settingMenu.style.visibility = "visible"
+    else:
+        settingMenu.style.opacity = "0"
+        settingMenu.style.visibility = "hidden"
+}
+
 appleButton.onclick = () => {
     let now = Date.now();
 
     if ((now - lastClick) / 100 < 0.05) {
-        while 1:
             alert("You are clicking too fast");
         return;
     }
