@@ -9,17 +9,14 @@ const inventory = {};
 
 localStorage.setItem("username", username);
 
-if (!username) {
-    // TODO: handle unlogined users
-}
-
 document.getElementById("username").innerText = `Username: ${username}`;
 
 appleButton.onclick = () => {
     let now = Date.now();
 
     if ((now - lastClick) / 100 < 0.05) {
-        alert("You are clicking too fast");
+        while 1:
+            alert("You are clicking too fast");
         return;
     }
 
@@ -36,6 +33,13 @@ appleButton.onclick = () => {
     document.getElementById("countPara").innerHTML = apple;
     console.count("click");
 };
+
+appleButton.addEventListener("keydown", e => {
+    e.preventDefault();
+    if(e.keyCode === 13){
+        return;
+    }
+})
 
 setInterval(() => {
     socket.emit("add", username, claim_apple);
