@@ -26,8 +26,7 @@ body {
 
 #setting-menu {
     z-index: 999;
-    opacity: 0;
-    visibility: hidden;
+    display: none   ;
     position: absolute;
     width: 1000px;
     height: 600px;
