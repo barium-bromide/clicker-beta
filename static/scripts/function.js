@@ -6,7 +6,36 @@ const username =
     document.getElementById("real-username").innerText ||
     localStorage.getItem("username");
 const inventory = {};
-
+if (!username) {
+    //redirect user to login
+    window.alert("get rickroll for not login you fucking retard")
+    window.alert("We’re no strangers to love")
+    window.alert("You know the rules and so do I")
+    window.alert("A full commitment’s what I’m thinking of")
+    window.alert("You wouldn’t get this from any other guy")
+    window.alert("I just wanna tell you how I’m feeling")
+    window.alert("Gotta make you understand")
+    window.alert("Never gonna give you up")
+    window.alert(" Never gonna let you down")
+    window.alert(" Never gonna run around and desert you")
+    window.alert(" Never gonna make you cry")
+    window.alert(" Never gonna say goodbye")
+    window.alert(" Never gonna tell a lie and hurt you")
+    window.alert(" We’ve known each other for so long")
+    window.alert(" Your heart’s been aching but you’re too shy to say it")
+    window.alert(" Inside we both know what’s been going on")
+    window.alert(" We know the game and we’re gonna play it")
+    window.alert(" And if you ask me how I’m feeling")
+    window.alert(" Don’t tell me you’re too blind to see")
+    window.alert(" Never gonna give you up")
+    window.alert(" Never gonna let you down")
+    window.alert(" Never gonna run around and desert you")
+    window.alert(" Never gonna make you cry")
+    window.alert(" Never gonna say goodbye")
+    window.alert(" Never gonna tell a lie and hurt you")
+    window.alert("go to login screen")
+    window.alert("Here is our term and services: we can take your ip and rickroll you go kill yourself")
+}
 localStorage.setItem("username", username);
 
 document.getElementById("username").innerText = `Username: ${username}`;
