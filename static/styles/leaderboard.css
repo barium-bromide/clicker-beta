@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    padding-left: 15px;
     outline: none;
     font-family: 'Poppins', sans-serif;
     background-color: rgb(52, 161, 235)
@@ -16,9 +17,10 @@ table {
     justify-content: center;
     text-align: center;
     border-collapse: collapse;
+    padding-top: 20px;
     font-size: 20px;
 }
 
 table tr {
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid white;
 }
