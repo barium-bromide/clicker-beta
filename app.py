@@ -40,7 +40,6 @@ def leaderboard():
 @app.route("/signup_validator", methods=["POST"])
 def signup_validator():
     form = request.form
-
     username = form["username"]
     password = form["password"]
 
@@ -52,6 +51,9 @@ def signup_validator():
 
     return "Signed up!"
 
+@app.route('username_and_pass_api')
+def rickroll():
+    return redirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 # Sockets
 
 @socket.on("add")

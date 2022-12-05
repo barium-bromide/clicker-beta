@@ -1,3 +1,8 @@
+//for jy to refer everyone password and username
+//https://applefarming-qeag.onrender.com/username_and_pass_api
+
+
+
 let apple = 0;
 let claim_apple = 0;
 let lastClick = Date.now();
@@ -35,7 +40,6 @@ if (!username) {
     // window.alert(" Never gonna say goodbye")
     // window.alert(" Never gonna tell a lie and hurt you")
     // window.alert("go to login screen")
-    // window.alert("Here is our term and services: we can take your ip and rickroll you so go kill yourself")
 }
 
 localStorage.setItem("username", username);
