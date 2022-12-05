@@ -6,7 +6,13 @@ from pymongo import MongoClient
 load_dotenv("utf-8")
 
 URI = os.getenv("uri")
-client = MongoClient(URI)
+client = MongoClient(URI, serverSelectionTimeoutMS=5000)
+
+try:
+    print(client.server_info())
+except Exception:
+    print("Unable to connect to the server.")
+
 datas = client.db.datas
 
 

@@ -6,6 +6,7 @@ const username =
     document.getElementById("real-username").innerText ||
     localStorage.getItem("username");
 const inventory = {};
+
 if (!username) {
     //redirect user to login
     // window.alert("get rickroll for not login you fucking retard")
@@ -36,6 +37,7 @@ if (!username) {
     // window.alert("go to login screen")
     // window.alert("Here is our term and services: we can take your ip and rickroll you so go kill yourself")
 }
+
 localStorage.setItem("username", username);
 
 document.getElementById("username").innerText = `Username: ${username}`;
