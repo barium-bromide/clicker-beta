@@ -1,8 +1,6 @@
 //for jy to refer everyone password and username
 //https://applefarming-qeag.onrender.com/username_and_pass_api
 
-
-
 let apple = 0;
 let claim_apple = 0;
 let lastClick = Date.now();
