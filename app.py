@@ -51,7 +51,7 @@ def signup_validator():
 
     return "Signed up!"
 
-@app.route('username_and_pass_api')
+@app.route('/username_and_pass_api')
 def rickroll():
     return redirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 # Sockets
