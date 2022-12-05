@@ -42,18 +42,18 @@ document.getElementById("username").innerText = `Username: ${username}`;
 
 document.querySelector("#settings").onclick = () => {
     const settingMenu = document.querySelector("#setting-menu");
-    if (settingMenu.classList == "hide"){
+    if (settingMenu.classList.contains("hide")) {
         settingMenu.classList.remove("hide");
-    }else {
+    } else {
         settingMenu.classList.add("hide");
     }
-}
+};
 
 appleButton.onclick = () => {
     let now = Date.now();
 
     if ((now - lastClick) / 100 < 0.05) {
-            alert("You are clicking too fast");
+        alert("You are clicking too fast");
         return;
     }
 
@@ -73,10 +73,10 @@ appleButton.onclick = () => {
 
 appleButton.addEventListener("keydown", e => {
     e.preventDefault();
-    if(e.keyCode === 13){
+    if (e.keyCode === 13) {
         return;
     }
-})
+});
 
 setInterval(() => {
     socket.emit("add", username, claim_apple);
