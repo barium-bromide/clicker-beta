@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from pymongo import MongoClient
 
-load_dotenv("utf-8")
+load_dotenv()
 
 URI = os.getenv("uri")
 client = MongoClient(URI, serverSelectionTimeoutMS=5000)

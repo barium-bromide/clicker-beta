@@ -6,7 +6,7 @@ socket.on("connect", () => {
 
 socket.on("apple", epal => {
     apple = epal;
-    document.getElementById("countPara").innerHTML = apple;
+    document.getElementById("countPara").innerHTML = apple.toFixed(2);
 });
 
 socket.on("inv", inv => {
@@ -47,7 +47,10 @@ socket.on("shop", shop => {
         let priceElement = document.createElement("p");
         priceElement.className = "price";
         priceElement.id = `price${i}`;
-        priceElement.innerText = `Price: ${price * 1.1 ** inventory[itemName]}`;
+        priceElement.innerText = `Price: ${(
+            price *
+            1.1 ** inventory[itemName]
+        ).toFixed(2)}`;
 
         let invElement = document.createElement("p");
         invElement.className = "inv";
