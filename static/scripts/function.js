@@ -1,7 +1,7 @@
 let apple = 0;
 let claim_apple = 0;
 let lastClick = Date.now();
-let appleButton = document.getElementById("IncreaseApple");
+const appleButton = document.getElementById("IncreaseApple");
 const username =
     document.getElementById("real-username").innerText ||
     localStorage.getItem("username");
@@ -69,7 +69,7 @@ appleButton.onclick = () => {
         appleButton.classList.remove("large");
     }, 100);
 
-    document.getElementById("countPara").innerHTML = apple;
+    document.getElementById("countPara").innerHTML = apple.toFixed(2);
     console.count("click");
 };
 
