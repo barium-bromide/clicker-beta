@@ -62,3 +62,10 @@ def add_item(username, item, amount):
             f"inventory.{item}": amount
         }
     })
+
+def get_top():
+    return datas.find({
+        "username": {
+            "$nin": ["Alice", "Bob"]
+        }
+    }).sort("apple", -1)
