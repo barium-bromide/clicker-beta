@@ -44,34 +44,39 @@ def signup_validator():
     form = request.form
     username = form["username"]
     password = form["password"]
-
-    # TODO: handle invalid username
-    # TODO: allow alpherberts . and _ only
-    invalid_username = ["fuck","ass","dick","retard","shit","nigga","nigger","puss","bonk","bitch","hitler",
+    invalid_username = ["fuck","ass","dick","retard","shit","nigga","nigger","puss","bitch","hitler",
                         "nazi","gay","lesbian","transgender","queer","sex","jayyong","cisgender","piss",
-                        "cum","cock","thot","penis","vagina","boob","breast","slut","twat","cunt","bastard",
+                        "cum","cock","thot","penis","vagina","boob","slut","twat","cunt","bastard",
                         "geonocide","suicide","racist","sexist","bollocks","testis","foreskin","anal","incest",
-                        "sperm","ovum","seminalvesicle","uretha","scrotum","prostateglands","ovary","cervix",
-                        "fallopiantube","uterus","menstrualcycle","risingsunflag","japanwarflag","rape","rapist",
-                        "raping","terrorist","terrorism","axispower","kurtvonschuschnigg","hirohito","hidekitojo",
-                        "stalin","tit","japanesewarflag"]
-    allowed_letters = ["abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ1234567890_."]
-    unban_word = ["documantary"]
+                        "sperm","ovum","risingsunflag","japanwarflag","rape","rapist",
+                        "raping","axispower","hirohito","hidekitojo","stalin","tit","japanesewarflag"]
+    allowed_letters = ["abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ1234567890_. "]
+    unban_word = ["documantary","document","documentation","cockadoodledoo"]
     ini_string = username
  
     k = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ";
  
     getVals = list(filter(lambda x: x in k, ini_string))
     result = "".join(getVals)
-
-    if  invalid_username not in result.lower():
+    valid = 1
+    for letters in username:
+        if letters not in allowed_letters:
+            valid = 0
+            break
+    for bad_word in invalid_username:
+        if bad_word in result:
+            valid = 0
+            break
+    for good_word in unban_word:
+        if good_word in result:
+            valid = 1
+            break
+    if valid == 1:
         create_user(username, password)
+        return render_template("skeletal.html")
     else:
         #TODO window.aler("Your username is inapproriate")
         pass
-    # TODO: redirect user
-
-    return render_template("skeletal.html")
 
 @app.route('/username_and_pass_api')
 def rickroll():
