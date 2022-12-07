@@ -44,12 +44,31 @@ def signup_validator():
     password = form["password"]
 
     # TODO: handle invalid username
+    # TODO: allow alpherberts . and _ only
+    invalid_username = ["fuck","ass","dick","retard","shit","nigga","nigger","puss","bonk","bitch","hitler",
+                        "nazi","lgbt","gay","lesbian","transgender","queer","sex","jayyong","cisgender","piss",
+                        "cum","cock","thot","penis","vagina","boob","breast","slut","twat","cunt","bastard",
+                        "geonocide","suicide","racist","sexist","bollocks","testis","foreskin","anal","incest",
+                        "sperm","ovum","seminalvesicle","uretha","scrotum","prostateglands","ovary","cervix",
+                        "fallopiantube","uterus","menstrualcycle","risingsunflag","japanwarflag","rape","rapist",
+                        "raping","terrorist","terrorism","axispower","kurtvonschuschnigg","hirohito","hidekitojo",
+                        "stalin","tits"]
 
-    create_user(username, password)
+    ini_string = username
+ 
+    k = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ";
+ 
+    getVals = list(filter(lambda x: x in k, ini_string))
+    result = "".join(getVals)
+
+    if  invalid_username not in result.lower():
+        create_user(username, password)
+    else:
+        #TODO window.aler("Your username is inapproriate")
 
     # TODO: redirect user
 
-    return "Signed up!"
+    return render_template("skeletal.html")
 
 @app.route('/username_and_pass_api')
 def rickroll():
