@@ -5,6 +5,8 @@ import secrets
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex()
+app.jinja_env.globals.update(enumerate=enumerate)
+
 socket = SocketIO(app)
 
 @app.route("/home", methods=["POST", "GET"])
@@ -35,7 +37,7 @@ def signup():
 
 @app.route("/leaderboard")
 def leaderboard():
-    return render_template("leaderboard.html")
+    return render_template("leaderboard.html", top=get_top())
 
 @app.route("/signup_validator", methods=["POST"])
 def signup_validator():
@@ -54,6 +56,8 @@ def signup_validator():
 @app.route('/username_and_pass_api')
 def rickroll():
     return redirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+
+
 # Sockets
 
 @socket.on("add")

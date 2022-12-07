@@ -15,11 +15,13 @@
             <th>Name</th>
             <th>Money</th>
         </tr>
+        {%- for i, user in enumerate(top, 1) %}
         <tr>
-            <td>#1</td>
-            <td>ABC</td>
-            <td>1000b</td>
+            <td>#{{i}}</td>
+            <td>{{user.username}}</td>
+            <td>{{"{:.2f}".format(user.apple)}}</td>
         </tr>
+        {% endfor %}
     </table>
 </body>
 </html>
