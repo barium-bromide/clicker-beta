@@ -48,14 +48,15 @@ def signup_validator():
     # TODO: handle invalid username
     # TODO: allow alpherberts . and _ only
     invalid_username = ["fuck","ass","dick","retard","shit","nigga","nigger","puss","bonk","bitch","hitler",
-                        "nazi","lgbt","gay","lesbian","transgender","queer","sex","jayyong","cisgender","piss",
+                        "nazi","gay","lesbian","transgender","queer","sex","jayyong","cisgender","piss",
                         "cum","cock","thot","penis","vagina","boob","breast","slut","twat","cunt","bastard",
                         "geonocide","suicide","racist","sexist","bollocks","testis","foreskin","anal","incest",
                         "sperm","ovum","seminalvesicle","uretha","scrotum","prostateglands","ovary","cervix",
                         "fallopiantube","uterus","menstrualcycle","risingsunflag","japanwarflag","rape","rapist",
                         "raping","terrorist","terrorism","axispower","kurtvonschuschnigg","hirohito","hidekitojo",
-                        "stalin","tits"]
-
+                        "stalin","tit","japanesewarflag"]
+    allowed_letters = ["abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ1234567890_."]
+    unban_word = ["documantary"]
     ini_string = username
  
     k = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ";
@@ -67,7 +68,7 @@ def signup_validator():
         create_user(username, password)
     else:
         #TODO window.aler("Your username is inapproriate")
-
+        pass
     # TODO: redirect user
 
     return render_template("skeletal.html")
