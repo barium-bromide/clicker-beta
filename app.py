@@ -46,15 +46,17 @@ def signup_validator():
     password = form["password"]
     if len(username) < 3:
         return "Username too short"
-    invalid_username = ["fuck","ass","dick","retard","shit","nigga","nigger","puss","bitch","hitler",
-                        "nazi","gay","lesbian","transgender","queer","sex","jayyong","piss",
-                        "cum","cock","thot","penis","vagina","boob","slut","twat","cunt","bastard",
-                        "geonocide","suicide","racist","sexist","bollocks","testis","foreskin","anal","incest",
-                        "risingsunflag","japanwarflag","axispower","hirohito","hidekitojo","stalin","tit",
-                        "japanesewarflag"]
+    invalid_username = ["fuck","ass","dick","retard","shit","nigga","nigger","puss","bitch",
+                        "nazi","gay","lesbian","transgender","queer","sex","jayyong","piss","tit"
+                        "cum","cock","thot","penis","vagina","boob","slut","twat","cunt","bastard","bollocks","testis","foreskin","anal","incest",
+                        "geonocide","suicide","racist","sexist", #violence
+                        "risingsunflag","japanwarflag","axispower","hirohito","hidekitojo""hitler","japanesewarflag"] #ww2
+
+    invalid_username_num = []
+
     allowed_letters = ["abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ1234567890_. "]
-    unban_word = ["documantary","document","documentation","cockadoodledoo","cockadoodledo","cockadodledoo",
-                  "cockadodledo","cockadoddledoo","cockadoddledo"]
+    unban_word = ["documantary","document","documentation",
+                  "cockadoodledoo","cockadoodledo","cockadodledoo","cockadodledo","cockadoddledoo","cockadoddledo"]
     ini_string = username
  
     k = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ";
@@ -64,6 +66,10 @@ def signup_validator():
     valid = True
     for letters in username:
         if letters not in allowed_letters:
+            valid = False
+            break
+    for chars in username:
+        if chars in invalid_username_num:
             valid = False
             break
     for bad_word in invalid_username:
