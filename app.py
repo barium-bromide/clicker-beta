@@ -22,8 +22,7 @@ def home():
         if user:
             return render_template("skeletal.html", username=username)
         else:
-            # TODO: handle invalid username
-            return "Invalid"
+            return render_template("login.html")
 
     return render_template("skeletal.html", username="")
 
@@ -60,12 +59,13 @@ def signup_validator():
     ini_string = username
  
     k = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ";
+    charlst = list(k)
  
     getVals = list(filter(lambda x: x in k, ini_string))
     result = "".join(getVals)
     valid = True
     for letters in username:
-        if letters not in allowed_letters:
+        if letters not in charlst:
             valid = False
             break
     for chars in username:
