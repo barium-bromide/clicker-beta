@@ -44,39 +44,42 @@ def signup_validator():
     form = request.form
     username = form["username"]
     password = form["password"]
+    if len(username) < 3:
+        return "Username too short"
     invalid_username = ["fuck","ass","dick","retard","shit","nigga","nigger","puss","bitch","hitler",
-                        "nazi","gay","lesbian","transgender","queer","sex","jayyong","cisgender","piss",
+                        "nazi","gay","lesbian","transgender","queer","sex","jayyong","piss",
                         "cum","cock","thot","penis","vagina","boob","slut","twat","cunt","bastard",
                         "geonocide","suicide","racist","sexist","bollocks","testis","foreskin","anal","incest",
-                        "sperm","ovum","risingsunflag","japanwarflag","rape","rapist",
-                        "raping","axispower","hirohito","hidekitojo","stalin","tit","japanesewarflag"]
+                        "risingsunflag","japanwarflag","axispower","hirohito","hidekitojo","stalin","tit",
+                        "japanesewarflag"]
     allowed_letters = ["abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ1234567890_. "]
-    unban_word = ["documantary","document","documentation","cockadoodledoo"]
+    unban_word = ["documantary","document","documentation","cockadoodledoo","cockadoodledo","cockadodledoo",
+                  "cockadodledo","cockadoddledoo","cockadoddledo"]
     ini_string = username
  
     k = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ";
  
     getVals = list(filter(lambda x: x in k, ini_string))
     result = "".join(getVals)
-    valid = 1
+    valid = True
     for letters in username:
         if letters not in allowed_letters:
-            valid = 0
+            valid = False
             break
     for bad_word in invalid_username:
         if bad_word in result:
-            valid = 0
+            valid = False
             break
     for good_word in unban_word:
         if good_word in result:
-            valid = 1
+            valid = True
             break
-    if valid == 1:
+    if valid:
         create_user(username, password)
         return render_template("skeletal.html")
     else:
         #TODO window.aler("Your username is inapproriate")
-        pass
+        return "Inappropriate username"
 
 @app.route('/username_and_pass_api')
 def rickroll():
