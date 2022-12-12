@@ -11,7 +11,7 @@ const username =
 const inventory = {};
 
 if (!username) {
-    //redirect user to login
+    location.href="skeletal.html"
     // window.alert("get rickroll for not login you fucking retard")
     // window.alert("We’re no strangers to love")
     // window.alert("You know the rules and so do I")
@@ -37,7 +37,7 @@ if (!username) {
     // window.alert(" Never gonna make you cry")
     // window.alert(" Never gonna say goodbye")
     // window.alert(" Never gonna tell a lie and hurt you")
-    // window.alert("go to login screen")
+    // window.alert("go to login screen or else i will grab your ip address and kill you")
 }
 
 localStorage.setItem("username", username);
