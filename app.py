@@ -53,12 +53,11 @@ def signup_validator():
 
     invalid_username_num = []
 
-    allowed_letters = ["abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ1234567890_. "]
     unban_word = ["documantary","document","documentation",
                   "cockadoodledoo","cockadoodledo","cockadodledoo","cockadodledo","cockadoddledoo","cockadoddledo"]
     ini_string = username
  
-    k = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ";
+    k = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVwXYZ_. ";
     charlst = list(k)
  
     getVals = list(filter(lambda x: x in k, ini_string))
