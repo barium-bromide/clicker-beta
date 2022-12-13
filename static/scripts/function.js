@@ -11,7 +11,7 @@ const username =
 const inventory = {};
 
 if (!username) {
-    location.href="skeletal.html"
+    window.location.href= "https://applefarming-qeag.onrender.com/login";
     // window.alert("get rickroll for not login you fucking retard")
     // window.alert("We’re no strangers to love")
     // window.alert("You know the rules and so do I")
