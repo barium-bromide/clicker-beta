@@ -2,8 +2,7 @@ from flask import Flask, jsonify, redirect, render_template, request, url_for, s
 from flask_socketio import SocketIO, emit
 from mongo import *
 import secrets
-from profanity_filter import ProfanityFilter
-pf = ProfanityFilter()
+from better_profanity import profanity
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex()
@@ -22,8 +21,8 @@ def home():
         if 15 < username < 3:
             return "Username too long or too short"
 
-        if pf.is_profane(username) == True:
-            return "Inappropriate username"
+        if profanity.contains_profanity("shit") == True:
+            return "inappropriate username"
 
 
         user = find(username=username, password=password)
