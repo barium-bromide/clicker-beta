@@ -18,13 +18,6 @@ def home():
         username = form["username"]
         password = form["password"]
 
-        if 15 < username < 3:
-            return "Username too long or too short"
-
-        if profanity.contains_profanity("shit") == True:
-            return "inappropriate username"
-
-
         user = find(username=username, password=password)
 
         if user:
@@ -51,6 +44,12 @@ def signup_validator():
     form = request.form
     username = form["username"]
     password = form["password"]
+    if 15 < username < 3:
+        return "Username too long or too short"
+
+    if profanity.contains_profanity(username):
+        return "inappropriate username"
+
 
 
 @app.route('/username_and_pass_api')
