@@ -4,7 +4,7 @@
 python app.py
 ```
 
-# If you are JAY YONG run the code with
+# If you are not zhi heng run the code with
 
 ```sh
 py app.py

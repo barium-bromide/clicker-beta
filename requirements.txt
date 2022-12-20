@@ -3,4 +3,4 @@ Gunicorn
 flask-socketio
 pymongo
 python-dotenv
-profanity-filter
+better-profanity
