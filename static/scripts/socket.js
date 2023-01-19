@@ -17,6 +17,8 @@ socket.on("inv", inv => {
 
 socket.on("item", (name, amount, price) => {
     console.timeEnd(name);
+    console.log(name, amount, price);
+
     inventory[name] = amount;
 
     document.getElementById(`price${name}`).innerText = `Price: ${(
@@ -39,9 +41,8 @@ socket.on("shop", shop => {
 
         let nameELement = document.createElement("p");
         let displayName = itemName.replace(/([A-Z])/g, " $1");
-        displayName =
+        nameELement.innerText =
             displayName[0].toUpperCase() + displayName.slice(1).toLowerCase();
-        nameELement.innerText = displayName;
 
         let buyBtn = document.createElement("button");
         buyBtn.className = "Buy";
@@ -53,7 +54,7 @@ socket.on("shop", shop => {
 
         let priceElement = document.createElement("p");
         priceElement.className = "price";
-        priceElement.id = `price${displayName}`;
+        priceElement.id = `price${itemName}`;
         priceElement.innerText = `Price: ${(
             price *
             1.1 ** inventory[itemName]
@@ -61,7 +62,7 @@ socket.on("shop", shop => {
 
         let invElement = document.createElement("p");
         invElement.className = "inv";
-        invElement.id = `inv${displayName}`;
+        invElement.id = `inv${itemName}`;
         invElement.innerText = inventory[itemName];
 
         container.appendChild(nameELement);
