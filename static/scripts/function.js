@@ -51,6 +51,7 @@ appleButton.onclick = () => {
 };
 
 logoutButton.onclick = () => {
+    localStorage.removeItem("username")
     window.location.href('https://applefarming-qeag.onrender.com/login')
 }
 
