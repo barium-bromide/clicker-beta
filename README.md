@@ -4,7 +4,7 @@
 python app.py
 ```
 
-# If you are not zhi heng run the code with
+# If the one above doesn't work try:
 
 ```sh
 py app.py
