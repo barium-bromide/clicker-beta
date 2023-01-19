@@ -1,10 +1,11 @@
-//for jy to refer everyone password and username
+//refer everyone password and username
 //https://applefarming-qeag.onrender.com/username_and_pass_api
 
 let apple = 0;
 let claim_apple = 0;
 let lastClick = Date.now();
 const appleButton = document.getElementById("IncreaseApple");
+const logoutButton = document.getElementById("log-out")
 const username =
     document.getElementById("real-username").innerText ||
     localStorage.getItem("username");
@@ -48,6 +49,10 @@ appleButton.onclick = () => {
     document.getElementById("countPara").innerHTML = apple.toFixed(2);
     console.count("click");
 };
+
+logoutButton.onclick = () => {
+    window.location.href('https://applefarming-qeag.onrender.com/login')
+}
 
 appleButton.addEventListener("keydown", e => {
     e.preventDefault();

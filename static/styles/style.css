@@ -37,6 +37,17 @@ body {
     margin-bottom: 50%;
 }
 
+#log-out {
+    background-color: transparent;
+    border: transparent;
+    width: 100px;
+    font-size: 25px;
+}
+
+#log-out:hover {
+    color: white;
+}
+
 #settings {
     text-decoration: none;
     background-color: transparent;
