@@ -52,7 +52,7 @@ appleButton.onclick = () => {
 
 logoutButton.onclick = () => {
     localStorage.removeItem("username");
-    window.location.href("https://applefarming-qeag.onrender.com/login");
+    window.location.href = "https://applefarming-qeag.onrender.com/login";
 };
 
 appleButton.addEventListener("keydown", e => {
@@ -70,12 +70,12 @@ setInterval(() => {
 }, 10_000);
 
 //workers = increase mouse power by one(click one time + mouse power)
-//farm = increase claim before leaving by one
-//factory = increase claim before leaving by 1%
-//store = increase claim before leaving by 2%
+//farm = increase apple per minute by one
+//factory = increase apple per minute by 1%
+//store = increase apple per minute by 2%
 //trucks = increase mouse power by 5%
-//ship =  increase claim before leaving by 5%
-//aeroplane = increase claim before leaving by 10%
+//ship =  increase apple per minute by 5%
+//aeroplane = increase apple per minute by 10%
 //trade centre = increase mouse power by 10%
-//computer = increase claim before leaving by 15%
-//rocket ship = increase claim before leaving by 20%
+//computer = increase apple per minute by 15%
+//rocket ship = increase apple per minute by 20%
