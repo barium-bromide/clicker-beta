@@ -51,9 +51,9 @@ appleButton.onclick = () => {
 };
 
 logoutButton.onclick = () => {
-    localStorage.removeItem("username")
-    window.location.href('https://applefarming-qeag.onrender.com/login')
-}
+    localStorage.removeItem("username");
+    window.location.href('https://applefarming-qeag.onrender.com/login');
+};
 
 appleButton.addEventListener("keydown", e => {
     e.preventDefault();

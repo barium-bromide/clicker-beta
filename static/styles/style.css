@@ -82,7 +82,7 @@ body {
 
 #Shop {
     position: absolute;
-    margin-left: 1030px;
+    margin-left: auto;
     margin-top: 0px;
     font-size: 50px;
 }
