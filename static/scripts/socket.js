@@ -17,7 +17,6 @@ socket.on("inv", inv => {
 
 socket.on("item", (name, amount, price) => {
     console.timeEnd(name);
-    console.log(name, amount, price);
 
     inventory[name] = amount;
 

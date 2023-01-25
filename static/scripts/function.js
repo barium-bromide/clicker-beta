@@ -5,7 +5,7 @@ let apple = 0;
 let claim_apple = 0;
 let lastClick = Date.now();
 const appleButton = document.getElementById("IncreaseApple");
-const logoutButton = document.getElementById("log-out")
+const logoutButton = document.getElementById("log-out");
 const username =
     document.getElementById("real-username").innerText ||
     localStorage.getItem("username");
