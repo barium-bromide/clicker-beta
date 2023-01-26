@@ -15,9 +15,16 @@ socket.on("inv", inv => {
     }
 });
 
-socket.on("item", (name, amount) => {
+socket.on("item", (name, amount, price) => {
     console.timeEnd(name);
+
     inventory[name] = amount;
+
+    document.getElementById(`price${name}`).innerText = `Price: ${(
+        price *
+        1.1 ** amount
+    ).toFixed(2)}`;
+    document.getElementById(`inv${name}`).innerText = amount;
 });
 
 socket.on("shop", shop => {
@@ -27,7 +34,7 @@ socket.on("shop", shop => {
         main.removeChild(main.lastChild);
     }
 
-    for (let [i, [itemName, price]] of Object.entries(shop).entries()) {
+    for (let [itemName, price] of Object.entries(shop)) {
         let container = document.createElement("div");
         container.className = "slot";
 
@@ -46,7 +53,7 @@ socket.on("shop", shop => {
 
         let priceElement = document.createElement("p");
         priceElement.className = "price";
-        priceElement.id = `price${i}`;
+        priceElement.id = `price${itemName}`;
         priceElement.innerText = `Price: ${(
             price *
             1.1 ** inventory[itemName]
@@ -54,7 +61,7 @@ socket.on("shop", shop => {
 
         let invElement = document.createElement("p");
         invElement.className = "inv";
-        invElement.id = `inv${i}`;
+        invElement.id = `inv${itemName}`;
         invElement.innerText = inventory[itemName];
 
         container.appendChild(nameELement);
