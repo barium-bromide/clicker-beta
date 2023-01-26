@@ -47,9 +47,11 @@ def signup_validator():
     if 15 < username < 3:
         return "Username too long or too short"
 
-    if profanity.contains_profanity(username):
+    elif profanity.contains_profanity(username):
         return "inappropriate username"
 
+    else:
+        create_user(username, password)
 
 
 @app.route('/username_and_pass_api')
