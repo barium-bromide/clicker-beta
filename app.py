@@ -44,7 +44,7 @@ def signup_validator():
     form = request.form
     username = form["username"]
     password = form["password"]
-    if 15 < username < 3:
+    if 15 < len(username) < 3:
         return "Username too long or too short"
 
     elif profanity.contains_profanity(username):
@@ -52,39 +52,13 @@ def signup_validator():
 
     else:
         create_user(username, password)
+        return redirect("https://applefarming-qeag.onrender.com/home")
 
 
 @app.route('/username_and_pass_api')
 def rickroll():
     return redirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 
-@app.route("/buy", methods=["POST"])
-def buy(user, item):
-    # This is plan b (incase the optimizing on socket doenst work)
-    print(user, item)
-    user_data = find(username=user)
-    price = SHOP[item] * 1.1 ** user_data["inventory"][item]
-    apple = user_data["apple"]
-
-    if apple >= price:
-        add_apple(user, -price)
-        add_item(user, item, 1)
-
-        user_data["apple"] -= price
-        user_data["inventory"][item] += 1
-
-        # emit("apple", user_data["apple"])
-        # emit("item", (item, user_data["inventory"][item]))
-        # emit("shop", SHOP)
-
-        response = jsonify({
-            "apple": user_data["apple"],
-            item: user_data["inventory"][item]
-        })
-
-    else:
-        # TODO: handle not enough apple
-        pass
 
 # Sockets
 
@@ -115,7 +89,8 @@ def buy(user, item):
         user_data["inventory"][item] += 1
 
         emit("apple", user_data["apple"])
-        emit("item", (item, user_data["inventory"][item], SHOP[item]))
+        emit("item", (item, user_data["inventory"][item]))
+        emit("shop", SHOP)
 
     else:
         # TODO: handle not enough apple
