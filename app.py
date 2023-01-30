@@ -52,7 +52,7 @@ def signup_validator():
 
     else:
         create_user(username, password)
-        return redirect("https://applefarming-qeag.onrender.com/home")
+        return redirect("/home")
 
 
 @app.route('/username_and_pass_api')
