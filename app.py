@@ -44,6 +44,7 @@ def signup_validator():
     form = request.form
     username = form["username"]
     password = form["password"]
+
     if 15 < len(username) < 3:
         return "Username too long or too short"
 
@@ -51,7 +52,7 @@ def signup_validator():
         return "inappropriate username"
 
     elif find(username=username):
-        return  "Username used"
+        return "Username used"
         
     else:
         create_user(username, password)
@@ -95,6 +96,11 @@ def buy(user, item):
 
 @socket.on("add")
 def add(user, amount):
+
+    if amount > 200:
+        # TODO: react to user hacking
+        return
+
     user_data = find(username=user)
     amount = (amount * ((user_data["inventory"]["workers"] * 100 + 
                        5 * user_data["inventory"]["trucks"] + 
