@@ -50,6 +50,9 @@ def signup_validator():
     elif profanity.contains_profanity(username):
         return "inappropriate username"
 
+    elif find(username=username):
+        return  "Username used"
+        
     else:
         create_user(username, password)
         session["username"] = username
