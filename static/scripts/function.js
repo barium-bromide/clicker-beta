@@ -70,12 +70,13 @@ setInterval(() => {
 }, 10_000);
 
 //workers = increase mouse power by one(click one time + mouse power)
-//farm = increase apple per minute by one
-//factory = increase apple per minute by 1%
-//store = increase apple per minute by 2%
+//farm = increase apple 10 sec by one
+//factory = increase apple 10 sec by 1%
+//store = increase apple 10 sec by 2%
 //trucks = increase mouse power by 5%
-//ship =  increase apple per minute by 5%
-//aeroplane = increase apple per minute by 10%
+//ship =  increase apple 10 sec by 5%
+//aeroplane = increase apple 10 sec by 10%
 //trade centre = increase mouse power by 10%
-//computer = increase apple per minute by 15%
-//rocket ship = increase apple per minute by 20%
+//computer = increase apple 10 sec by 15%
+//rocket ship = increase apple 10 sec by 20%
+//farm factory ship aeroplane computer rocket ship

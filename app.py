@@ -91,7 +91,16 @@ def buy(user, item):
 
 @socket.on("add")
 def add(user, amount):
-    # TODO: check apple amount
+    user_data = find(username=user)
+    amount = (amount * ((user_data["inventory"]["workers"] * 100 + 
+                       5 * user_data["inventory"]["trucks"] + 
+                       10 * user_data["inventory"]["tradeCenter"]) / 100) + 
+                       ((user_data["inventory"]["farm"] * 100 + 
+                       2 * user_data["inventory"]["factory"] + 
+                       5 * user_data["inventory"]["ship"] + 
+                       10 * user_data["inventory"]["aeroplane"] + 
+                       15 * user_data["inventory"]["computer"] + 
+                       20 * user_data["inventory"]["rocketShip"]) / 100))
     add_apple(user, amount)
 
 @socket.on("init")
