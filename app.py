@@ -25,7 +25,7 @@ def home():
         else:
             return render_template("login.html")
 
-    return render_template("skeletal.html", username="")
+    return render_template("skeletal.html", username=session.get("username", ""))
 
 @app.route("/login")
 def login():
@@ -52,6 +52,7 @@ def signup_validator():
 
     else:
         create_user(username, password)
+        session["username"] = username
         return redirect("/home")
 
 
