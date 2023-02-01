@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple Clicker | Log In</title>
     <link rel="stylesheet" href="/static/styles/login.css">
+
+    <script src="/static/scripts/error.js" defer></script>
 </head>
 <body id="body">
     <div class="loginpage" id="loginbox">
         <h2>Apple Clicker</h2>
-            <p id="error">message</p>
-            <br>
+        <p id="error" style="display: none;">{{error}}</p>
+        <br>
         <form action="/home" method="post">
             <div class="inputbox">
                 <input type="text" maxlength="15" name="username" required>

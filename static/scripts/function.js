@@ -2,7 +2,8 @@
 //https://applefarming-qeag.onrender.com/username_and_pass_api
 
 let apple = 0;
-let claim_apple = 0;
+let claimApple = 0;
+let mousePower = 0;
 let lastClick = Date.now();
 const appleButton = document.getElementById("IncreaseApple");
 const logoutButton = document.getElementById("log-out");
@@ -38,7 +39,8 @@ appleButton.onclick = () => {
 
     lastClick = Date.now();
     apple++;
-    claim_apple++;
+    claimApple++;
+    mousePower += inventory["workers"];
 
     appleButton.classList.add("large");
 
@@ -63,10 +65,10 @@ appleButton.addEventListener("keydown", e => {
 });
 
 setInterval(() => {
-    socket.emit("add", username, claim_apple);
-    console.log(`Claimed ${claim_apple} apple(s)`);
+    socket.emit("add", username, claimApple);
+    console.log(`Claimed ${claimApple} apple(s)`);
 
-    claim_apple = 0;
+    claimApple = 0;
 }, 10_000);
 
 //workers = increase mouse power by one(click one time + mouse power)

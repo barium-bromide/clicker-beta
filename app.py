@@ -23,17 +23,18 @@ def home():
         if user:
             return render_template("skeletal.html", username=username)
         else:
-            return render_template("login.html")
+            session["login_error"] = "Incorrect username/password"
+            return redirect("/login")
 
     return render_template("skeletal.html", username=session.get("username", ""))
 
 @app.route("/login")
 def login():
-    return render_template("login.html")
+    return render_template("login.html", error=session.pop("login_error", ""))
 
 @app.route("/signup")
 def signup():
-    return render_template("signup.html")
+    return render_template("signup.html", error=session.pop("signup_error", ""))
 
 @app.route("/leaderboard")
 def leaderboard():
@@ -44,20 +45,26 @@ def signup_validator():
     form = request.form
     username = form["username"]
     password = form["password"]
+    confirm = form["confirm"]
 
     if 15 < len(username) < 3:
-        return "Username too long or too short"
-
-    elif profanity.contains_profanity(username):
-        return "inappropriate username"
+        session["signup_error"] = "Username too long or too short"
 
     elif find(username=username):
-        return "Username used"
-        
+        session["signup_error"] = "Username used"
+
+    elif profanity.contains_profanity(username):
+        session["signup_error"] = "Inappropriate username"
+
+    elif password != confirm:
+        session["signup_error"] = "Please make sure the password match"
+
     else:
         create_user(username, password)
         session["username"] = username
         return redirect("/home")
+
+    return redirect("/signup")
 
 
 @app.route('/username_and_pass_api')

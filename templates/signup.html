@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple Clicker | Sign Up</title>
-    <link rel="stylesheet" href="/static/styles/login.css">
+    <link rel="stylesheet" href="/static/styles/signup.css">
+
+    <script src="/static/scripts/error.js" defer></script>
 </head>
 <body id="body">
     <div class="loginpage" id="loginbox">
         <h2>Apple Clicker</h2>
-        <p id="error">message</p>
+        <p id="error" style="display: none;">{{error}}</p>
         <br>
         <form action="/signup_validator" method="post">
             <!--change-->
@@ -29,7 +31,7 @@
             <br>
             <br>
             <div class="inputbox">
-                <input type="password" maxlength="20" required>
+                <input type="password" maxlength="20" name="confirm" required>
                 <label>Enter your confirm password</label>
                 <span></span>
             </div>
