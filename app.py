@@ -98,7 +98,7 @@ def buy(user, item):
 def add(user, amount):
 
     if amount > 200:
-        # TODO: react to user hacking
+        emit("warn", "You have been caught hacking, please do not hack!")
         return
 
     user_data = find(username=user)

@@ -109,3 +109,10 @@
 .btn:hover {
     background: #a0a0a0;
 }
+
+#error {
+    font-size: 20px;
+    color: red;
+    font-style: italic; 
+    display: none;
+}

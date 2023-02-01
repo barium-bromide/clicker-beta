@@ -72,3 +72,8 @@ socket.on("shop", shop => {
         main.appendChild(container);
     }
 });
+
+socket.on("warn", msg => {
+    console.warn(msg)
+});
+
