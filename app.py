@@ -112,6 +112,7 @@ def add(user, amount):
                        15 * user_data["inventory"]["computer"] + 
                        20 * user_data["inventory"]["rocketShip"]) / 100))
     add_apple(user, amount)
+    emit("apple", amount)
 
 @socket.on("init")
 def init(user):
