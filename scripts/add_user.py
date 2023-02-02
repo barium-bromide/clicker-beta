@@ -11,6 +11,9 @@ try:
     print(client.server_info())
 except Exception:
     print("Unable to connect to the server.")
+    exit()
+
+os.system("cls")
 
 datas = client.db.datas
 
