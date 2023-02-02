@@ -65,6 +65,7 @@ socket.on("shop", shop => {
         buyBtn.className = "Buy";
         buyBtn.innerText = "Buy";
         buyBtn.onclick = () => {
+            console.log(`Buying ${displayName}...`);
             socket.emit("buy", username, itemName);
             console.time(itemName);
         };
