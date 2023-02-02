@@ -1,10 +1,28 @@
 const socket = io();
 
+function getTime() {
+    currentdate = new Date();
+    return (
+        currentdate.getDate() +
+        "/" +
+        (currentdate.getMonth() + 1) +
+        "/" +
+        currentdate.getFullYear() +
+        " @ " +
+        currentdate.getHours() +
+        ":" +
+        currentdate.getMinutes() +
+        ":" +
+        currentdate.getSeconds()
+    );
+}
+
 socket.on("connect", () => {
     socket.emit("init", username);
 });
 
 socket.on("apple", epal => {
+    console.log(`${apple} -> ${epal}`);
     apple = epal;
     document.getElementById("countPara").innerHTML = apple.toFixed(2);
 });
@@ -74,6 +92,5 @@ socket.on("shop", shop => {
 });
 
 socket.on("warn", msg => {
-    console.warn(msg)
+    console.warn(msg);
 });
-
