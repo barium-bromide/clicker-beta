@@ -3,12 +3,15 @@ from flask_socketio import SocketIO, emit
 from mongo import *
 import secrets
 from better_profanity import profanity
+from timer import Timer
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex()
 app.jinja_env.globals.update(enumerate=enumerate)
 
 socket = SocketIO(app)
+
+timer = Timer()
 
 @app.route("/home", methods=["POST", "GET"])
 def home():
@@ -131,21 +134,29 @@ def init(user):
 
 @socket.on("buy")
 def buy(user, item):
-    print(user, item)
+    print(user, "bought", item)
+
+    timer.start()
     user_data = find(username=user)
+    timer.end("Get user data")
+
     price = SHOP[item] * 1.1 ** user_data["inventory"][item]
     apple = user_data["apple"]
 
     if apple >= price:
+        timer.start()
         add_apple(user, -price)
         add_item(user, item, 1)
+        timer.end("Change item value in database")
 
         user_data["apple"] -= price
         user_data["inventory"][item] += 1
 
+        timer.start()
         emit("apple", user_data["apple"])
         emit("item", (item, user_data["inventory"][item]))
         emit("shop", SHOP)
+        timer.end("Emit all item to socket")
 
     else:
         # TODO: handle not enough apple
