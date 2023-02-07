@@ -30,7 +30,7 @@ if __name__ == "__main__":
         print("--ABORTED--")
         exit()
 
-    datas.delete_many({
+    datas.delete_one({
         "username": user
     })
 
