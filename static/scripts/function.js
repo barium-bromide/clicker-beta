@@ -3,7 +3,6 @@
 
 let apple = 0;
 let claimApple = 0;
-let mousePower = 0;
 let lastClick = Date.now();
 const appleButton = document.getElementById("IncreaseApple");
 const logoutButton = document.getElementById("log-out");
@@ -38,9 +37,8 @@ appleButton.onclick = () => {
     }
 
     lastClick = Date.now();
-    apple++;
+    apple += inventory["workers"] + 1;
     claimApple++;
-    mousePower += inventory["workers"];
 
     appleButton.classList.add("large");
 
